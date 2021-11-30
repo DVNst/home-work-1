@@ -1,0 +1,20 @@
+.profile {
+  display: inline-block;
+  padding: 40px 120px 47px 37px;
+  border: 10px solid #e1e1e1;
+  border-radius: 20px;
+
+  background-color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile__name {
+  margin: 0 0 21px;
+  font-size: 38px;
+}
+
+.profile__date {
+  margin: 0;
+  font-size: 28px;
+}

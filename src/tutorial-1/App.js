@@ -1,7 +1,10 @@
+import Profile from "./components/profile/profile";
+
 function App() {
+  document.title = "Урок №1";
   return (
     <div className="App">
-      <h1>Урок №1</h1>
+      <Profile name="Вася Пупкин" registredAt={new Date(2021, 5, 22)} />
     </div>
   );
 }
