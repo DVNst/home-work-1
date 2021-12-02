@@ -5,7 +5,7 @@ const Form = () => {
 
   function handleChangeInput(e) {
     //при изменении input меняем соответсвующее значение в user
-    user[e.target.name] = e.target.value;
+    user[e.target.name] = e.target.value.trim();
   }
 
   function handleSubmit(e) {
@@ -21,7 +21,7 @@ const Form = () => {
       console.log(user);
       e.target.reset();
       //сбрасываем значения переменных
-      Object.keys(user).map(i => user[i] = '');
+      user = { email: "", password: "" }
     }
   }
 
