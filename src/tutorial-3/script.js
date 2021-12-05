@@ -7,8 +7,8 @@ window.onload = () => {
 function handleClickAdd() {
   const newTask = document.getElementById('new-task');
 
-  if (newTask.value) {
-    tasks.push(newTask.value);
+  if (newTask.value.trim()) {
+    tasks.push(newTask.value.trim());
     newTask.value = '';
     render();
   }
