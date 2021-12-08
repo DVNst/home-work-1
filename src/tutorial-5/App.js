@@ -6,11 +6,7 @@ function App() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    if (!(localStorage.getItem('comments'))) {
-      localStorage.setItem('comments', []);
-    } else {
-      setComments(JSON.parse(localStorage.getItem('comments')));
-    }
+    setComments(JSON.parse(localStorage.getItem('comments')) || []);
   }, []);
 
   useEffect(() => {
