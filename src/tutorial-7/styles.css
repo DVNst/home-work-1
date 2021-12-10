@@ -8,10 +8,7 @@ body {
 }
 
 .row {
+  margin: 8px 0;
   display: flex;
-}
-
-.MuiTextField-root,
-.MuiButton-root {
-  margin: 0 15px !important;
+  justify-content: space-between;
 }
