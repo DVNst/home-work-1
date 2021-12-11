@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import FormStart from '../../forms/form-start/form-start';
 import PersonalInfo from '../../forms/personal-info/personal-info';
 import Address from '../../forms/address/address';
-import Rezult from '../../forms/rezult/rezult';
+import Result from '../../forms/result/result';
 
 // const quizSteps = ['PersonalInfo', 'Address', 'Rezult'];
 
@@ -48,7 +48,7 @@ const Form = () => {
 
   return (
     <>
-        <Route exact path='/' render={() => <FormStart clicStart={() => nextStep(1)}/>}/>
+        <Route exact path='/' render={() => <FormStart clickStart={() => nextStep(1)}/>}/>
         {/* {createRoutesForm(quizSteps)} */}
         <Route path='/step/:id'
             render={({match}) => {
@@ -58,9 +58,9 @@ const Form = () => {
                 case '2':
                   return <Address clickHandleSubmit={addFormData} data={formValues} clickBack={() => nextStep(1)}/>
                 case '3':
-                  return <Rezult data={formValues} clickBack={() => nextStep(2)} clickReplay={() => nextStep(0)}/>
+                  return <Result data={formValues} clickBack={() => nextStep(2)} clickReplay={() => nextStep(0)}/>
                 default:
-                  return <Rezult data={formValues} clickBack={() => nextStep(2)} clickReplay={() => nextStep(0)}/>;
+                  return <Result data={formValues} clickBack={() => nextStep(2)} clickReplay={() => nextStep(0)}/>;
               }
             }}
         />

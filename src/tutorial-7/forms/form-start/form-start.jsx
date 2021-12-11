@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Button } from '@mui/material';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 
-const FormStart = ({ clicStart }) => {
+const FormStart = ({ clickStart }) => {
   return (
     <Paper
       elevation={2}
@@ -15,10 +15,7 @@ const FormStart = ({ clicStart }) => {
         size="large"
         fullWidth
         startIcon={<DirectionsRunIcon />}
-        onClick={() => {
-          console.log('CLICK START');
-          clicStart();
-        }}
+        onClick={clickStart}
       >
         Начать
       </Button>

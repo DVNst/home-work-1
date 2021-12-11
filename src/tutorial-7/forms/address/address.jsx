@@ -26,7 +26,9 @@ const Address = ({clickHandleSubmit, clickBack, data}) => {
     },
   });
 
-  const clickResetForm = () => reset();
+  const clickResetForm = () => {
+    reset({city: '', street: '', home: ''});
+  };
 
   const onSubmit = (values) => {
     clickHandleSubmit(values);

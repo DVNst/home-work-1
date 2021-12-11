@@ -2,7 +2,7 @@ import { Paper, Button, TextField } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ReplayIcon from '@mui/icons-material/Replay';
 
-const Rezult = ({clickBack, clickReplay, data}) => {
+const Result = ({clickBack, clickReplay, data}) => {
   return (
     <Paper
       elevation={2}
@@ -47,4 +47,4 @@ const Rezult = ({clickBack, clickReplay, data}) => {
   );
 };
 
-export default Rezult;
+export default Result;

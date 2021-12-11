@@ -31,7 +31,7 @@ const PersonalInfo = ({ clickHandleSubmit, clickBack, data }) => {
   const { handleSubmit, register, formState, reset } = myForm;
 
   const clickResetForm = () => {
-    reset({firstName: 'Igor', lastName: '', email: '', password: '', about: ''});
+    reset({firstName: '', lastName: '', email: '', password: '', about: ''});
   };
 
   const onSubmit = (values) => {
