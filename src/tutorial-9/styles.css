@@ -25,7 +25,7 @@ body {
 }
 
 .app-container {
-  max-width: 560px;
+  width: 560px;
 }
 
 .app-form {
@@ -74,6 +74,7 @@ body {
 
 .app-user {
   padding: 35px;
+  min-height: 394px;
   background-color: #1f2a48;
   border: 1px solid #003670;
   border-radius: 10px;
@@ -85,7 +86,12 @@ body {
 }
 
 .app-user_image {
+  height: 90px;
+  width: 90px;
   margin-right: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .app-user_name {
@@ -102,6 +108,11 @@ body {
   font-size: 18px;
   line-height: 23px;
   color: #007afe;
+}
+
+.app-user_name span a {
+  color: #007afe;
+  text-decoration: none;
 }
 
 .app-user_about {
