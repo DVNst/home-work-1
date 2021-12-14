@@ -10,13 +10,9 @@ const UserInfo = ({ userInfo, isLoading, isError }) => {
     return n;
   };
 
-  const public_repos = divisionThousands(userInfo.public_repos);
-  const followers = divisionThousands(userInfo.followers);
-  const following = divisionThousands(userInfo.following);
-
   return (
     <div className='app-user'>
-      {(Object.keys(userInfo).length > 0) && (
+      {userInfo && (
         <>
           <div className='app-user_info'>
             <div className='app-user_image'>
@@ -35,21 +31,21 @@ const UserInfo = ({ userInfo, isLoading, isError }) => {
           <ul className='app-user_stats'>
             <li className='app-user_stats-item'>
               Репозитории &nbsp;
-              <span>{public_repos}</span>
+              <span>{divisionThousands(userInfo.public_repos)}</span>
             </li>
             <li className='app-user_stats-item'>
               Подписчиков &nbsp;
-              <span>{followers}</span>
+              <span>{divisionThousands(userInfo.followers)}</span>
             </li>
             <li className='app-user_stats-item'>
               Подписан &nbsp;
-              <span>{following}</span>
+              <span>{divisionThousands(userInfo.following)}</span>
             </li>
           </ul>
           <ul className='app-user_location'>
             <li className='app-user_location-item'>{userInfo.location}</li>
             <li className='app-user_location-item'>
-              <a href={userInfo.blog}>{userInfo.blog}</a>
+              <a href={userInfo.blog} target='_blank' rel='noreferrer'>{userInfo.blog}</a>
             </li>
           </ul>
         </>)}

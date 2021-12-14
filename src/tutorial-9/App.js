@@ -6,12 +6,14 @@ import axios from 'axios';
 import './styles.css';
 
 function App() {
-  const [userInfo, setUserInfo] = React.useState({});
+  const [userInfo, setUserInfo] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
   
-  const getUserInfo = async (userName) => {
-    await axios.get(`https://api.github.com/users/${userName}`)
+  const getUserInfo = (userName) => {
+    setUserInfo(null);
+    setIsLoading(true);
+    axios.get(`https://api.github.com/users/${userName}`)
       .then(({data}) => {
         setIsError(false);
         setIsLoading(false);
@@ -28,25 +30,21 @@ function App() {
       });
   };
 
-  const clickSearch = (e) => {
+  const handleSubmitSearch = (e) => {
     e.preventDefault();
-    if (e.target[0].value) {
-      // console.log('ЗАГРУЗКА', e.target[0].value);
-      setUserInfo({});
-      setIsLoading(true);
-      getUserInfo(e.target[0].value);
+    if (e.target[0].value.trim()) {
+      getUserInfo(e.target[0].value.trim());
     };
   }
 
   return (
     <div className='app' id='app'>
       <div className='app-container'>
-        <form className='app-form' onSubmit={clickSearch}>
+        <form className='app-form' onSubmit={handleSubmitSearch}>
           <input type='text' className='app-input' placeholder='Укажите GitHub-аккаунт' />
           <button className='app-form_btn' type='submit'>Найти</button>
         </form>
         <UserInfo userInfo={userInfo} isLoading={isLoading} isError={isError}/>
-        {console.log('userInfo', userInfo)}
       </div>
     </div>
   );
